@@ -1,0 +1,15 @@
+(test
+ (name listing_test)
+ (modules listing_test)
+ (libraries service_listing unix))
+
+(test
+ (name log_test)
+ (modules log_test)
+ (libraries service_listing unix))
+
+(test
+ (name cli_test)
+ (modules cli_test)
+ (libraries unix)
+ (action (run %{test} %{exe:../bin/main.exe})))
